@@ -54,10 +54,6 @@ namespace Kea.UI
 
         #endregion
 
-
-
-
-
         /// <summary>
         /// Dependency property that when is set to true, focus the next control when the "Enter" key is pressed
         /// </summary>
@@ -105,11 +101,12 @@ namespace Kea.UI
 
             if (!ignorar)
             {
+                //We take the object actually being focus by the keyword, this is not always the element who trigger the event KeyDown
+                var elementWithFocus = Keyboard.FocusedElement as UIElement;
                 //We set the Handled property of the event "PreviewKeyDown" to true, that is intended to no other control do nothing when this key is pressed
                 e.Handled = true;
-
                 //Finally we move the focus to the next element
-                if (element != null) element.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                if (elementWithFocus != null) elementWithFocus.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
             }
         }
         #endregion

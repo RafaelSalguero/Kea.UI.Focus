@@ -8,5 +8,9 @@
         <Style TargetType="TextBox">
             <Setter Property="kui:Focus.AdvanceOnEnterKey" Value="True"></Setter>
         </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="kui:Focus.AdvanceOnEnterKey" Value="True"></Setter>
+        </Style>
+        
     </Application.Resources>
 </Application>

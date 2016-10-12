@@ -10,10 +10,11 @@
         kui:Focus.FirstControlFocus="True">
     <Grid>
         <StackPanel>
+            <DatePicker></DatePicker>
             <TextBox />
             <TextBox />
             <TextBox  AcceptsReturn="True" Height="200" />
-            <TextBox />
+            <TextBox></TextBox>
         </StackPanel>
     </Grid>
 </Window>
