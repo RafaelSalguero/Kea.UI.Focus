@@ -54,6 +54,49 @@ namespace Kea.UI
 
         #endregion
 
+        #region OnFocusSelectAll
+        public static readonly DependencyProperty OnFocusSelectAllProperty
+            = DependencyProperty.RegisterAttached("OnFocusSelectAll", typeof(bool), typeof(Focus), new PropertyMetadata(false, OnFocusSelectAllChanged));
+
+        public static bool GetOnFocusSelectAll(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(OnFocusSelectAllProperty);
+        }
+
+        public static void SetOnFocusSelectAll(DependencyObject obj, bool value)
+        {
+            obj.SetValue(OnFocusSelectAllProperty, value);
+        }
+
+        private static void OnFocusSelectAllChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //We take the dependency object d "sender" as a UIElement, because it implements the event "PreviewKeyDown"
+            var element = d as UIElement;
+
+            //If the element is null, we do not do anything
+            if (element == null)
+                return;
+
+            if ((bool)e.NewValue)
+            {
+                element.GotKeyboardFocus += Element_GotKeyboardFocus;
+            }
+            else
+            {
+                element.GotKeyboardFocus -= Element_GotKeyboardFocus;
+            }
+        }
+
+        private static void Element_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            var el = sender as TextBoxBase;
+            if(el != null)
+            {
+                el.SelectAll();
+            }
+        }
+        #endregion
+
         /// <summary>
         /// Dependency property that when is set to true, focus the next control when the "Enter" key is pressed
         /// </summary>

@@ -7,7 +7,17 @@
         xmlns:local="clr-namespace:Kea.UI.Test"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
+        
         kui:Focus.FirstControlFocus="True">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="kui:Focus.AdvanceOnEnterKey" Value="True" />
+            <Setter Property="kui:Focus.OnFocusSelectAll" Value="True" />
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="kui:Focus.AdvanceOnEnterKey" Value="True"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <StackPanel>
             <DatePicker></DatePicker>

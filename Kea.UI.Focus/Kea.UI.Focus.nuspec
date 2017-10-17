@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/RafaelSalguero/Kea.UI.Focus/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/RafaelSalguero/Kea.UI.Focus</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Atteched behaviours for common operations with focus</description>
+    <releaseNotes>Added OnFocusSelectAll</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>MVVM WPF Focus Attached Behaviour</tags>
+  </metadata>
+</package>
